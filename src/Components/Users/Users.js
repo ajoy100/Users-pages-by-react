@@ -16,6 +16,8 @@ import L from '../../Images/L.jpg';
 import M from '../../Images/M.jpg';
 import N from '../../Images/N.jpg';
 import Cart from '../Cart/Cart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 
 const Users = () => {
@@ -24,10 +26,10 @@ const Users = () => {
 
 
          
-    const handleAddSalary =(info)=>{
+    const handleAddSalary =(Info)=>{
         
-        console.log(" Salary Added ",info );
-        const newCart=[...cart,info];
+        console.log(" Salary Added ",Info );
+        const newCart=[...cart,Info];
         setCart(newCart);
 
     }
@@ -35,23 +37,23 @@ const Users = () => {
     
 
     const personInfo=[
-        {name:'Nean',profession:'Doctor',salary:'$105000',email:'nean@11j.com',contactNumber:'017********'},
-        {name:'Json',profession:'Web Designer',salary:'$100000',email:'json@11j.com',contactNumber:'017********'},
-        {name:'Jenna',profession:'Graphics-Designer',salary:'$80000',email:'jenna@11j.com',contactNumber:'017********'},
-        {name:'Nick',profession:'Web Designer',salary:'$70000',email:'nick@11j.com',contactNumber:'017********'},
-        {name:'Petter',profession:'wordpress-Developer',salary:'$110000',email:'petter@11j.com',contactNumber:'017********'},
+        {name:'Nean',profession:'Doctor',salary:105000,email:'nean@11j.com',contactNumber:'017********'},
+        {name:'Json',profession:'Web Designer',salary:100000,email:'json@11j.com',contactNumber:'017********'},
+        {name:'Jenna',profession:'Graphics-Designer',salary:80000,email:'jenna@11j.com',contactNumber:'017********'},
+        {name:'Nick',profession:'Web Designer',salary:70000,email:'nick@11j.com',contactNumber:'017********'},
+        {name:'Petter',profession:'wordpress-Developer',salary:110000,email:'petter@11j.com',contactNumber:'017********'},
 
-        {name:'Riki',profession:'Seo-specialist',salary:'$70000',email:'riki@11j.com',contactNumber:'017********'},
-        {name:'Hilter',profession:'Web Designer',salary:'$1140000',email:'hilter@11j.com',contactNumber:'017********'},
-        {name:'Mark',profession:'Web Designer',salary:'$100000',email:'mark@11j.com',contactNumber:'017********'},
-        {name:'Ramiya',profession:'Engineer',salary:'$150000',email:'ramiya@11j.com',contactNumber:'017********'},
-        {name:'Piku',profession:'Manager',salary:'$112000',email:'piku@11j.com',contactNumber:'017********'},
+        {name:'Riki',profession:'Seo-specialist',salary:70000,email:'riki@11j.com',contactNumber:'017********'},
+        {name:'Hilter',profession:'Web Designer',salary:140000,email:'hilter@11j.com',contactNumber:'017********'},
+        {name:'Mark',profession:'Web Designer',salary:100000,email:'mark@11j.com',contactNumber:'017********'},
+        {name:'Ramiya',profession:'Engineer',salary:150000,email:'ramiya@11j.com',contactNumber:'017********'},
+        {name:'Piku',profession:'Manager',salary:112000,email:'piku@11j.com',contactNumber:'017********'},
 
-        {name:'Rinian',profession:'Wordpress T. D.',salary:'$150000',email:'rinian@11j.com',contactNumber:'017********'},
-        {name:'Jikniru',profession:'Web Designer',salary:'$60000',email:'jikniru@11j.com',contactNumber:'017********'},
-        {name:'Hosin',profession:'Foreman',salary:'$80000',email:'json@11j.com',contactNumber:'017********'},
-        {name:'Juniya',profession:'Teacher',salary:'$150000',email:'juniya@11j.com',contactNumber:'017********'},
-        {name:'Kinin',profession:'Professor',salary:'$170000',email:'jkinin@11j.com',contactNumber:'017********'},
+        {name:'Rinian',profession:'Wordpress T. D.',salary:150000,email:'rinian@11j.com',contactNumber:'017********'},
+        {name:'Jikniru',profession:'Web Designer',salary:60000,email:'jikniru@11j.com',contactNumber:'017********'},
+        {name:'Hosin',profession:'Foreman',salary:80000,email:'json@11j.com',contactNumber:'017********'},
+        {name:'Juniya',profession:'Teacher',salary:150000,email:'juniya@11j.com',contactNumber:'017********'},
+        {name:'Kinin',profession:'Professor',salary:170000,email:'jkinin@11j.com',contactNumber:'017********'},
     ]
 
     const img={
@@ -86,7 +88,7 @@ const Users = () => {
                  
             </div>
             <div>
-                  <Cart cart={cart}></Cart>
+                  <Cart cart={cart}></Cart> 
             </div>
            
         </div>
@@ -96,15 +98,17 @@ const Users = () => {
 function Person(props){
 
     const personstyle={
-        border:'1px solid gray',
+        border:'1px solid lightgray',
         borderRadius:'5px',
         backgroundColor:'light',
         width:'30%',
         paddingBottom:'3%',
         margin:'1%',
-        float:'left'
+        float:'left',
+        boxShadow:'3px 3px 3px 3px lightgray'
     }
-   
+    
+    
      console.log(props);
     // const {name}=props.nam;
     return (
@@ -114,15 +118,15 @@ function Person(props){
             <h1> {props.im}</h1>
             <h3>Name :{props.name}</h3>
             <h4>Profession:{props.profession}</h4>
-            <h4>Anual Salary:{props.salary}</h4>
+            <h4>Anual Salary: $ {props.salary}</h4>
             <h4>Cont. Num:{props.contactNumber}</h4>
 
 
 
 
             <button className="mainButton"
-            onClick={()=> props.handleAddSalary(props.info)}
-            >Add Salary</button>
+            onClick={()=> props.handleAddSalary(props)}
+            > <FontAwesomeIcon icon={faPlus} /> Add Salary</button>
 
 
              

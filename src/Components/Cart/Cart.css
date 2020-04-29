@@ -1,0 +1,7 @@
+.cart{
+    margin:35px;
+    padding: 5px 25px 5px 15px;
+    border-radius: 10px;
+    background-color: rgb(158, 158, 231);
+    box-shadow: 5px 5px 5px 5px lightgray;
+}

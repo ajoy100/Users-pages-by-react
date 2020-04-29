@@ -1,22 +1,22 @@
 import React from 'react';
-
+import './Cart.css';
 const Cart = (props) => {
     const cart=props.cart;
     console.log(cart);
-    //const total=((total,urr)=>total+urr.salary,0)
+    // const total=((total,urr)=>total+urr.salary,0);
 
-    //const salary=props.salary;
+    // const salar=toNumber(salary);
     let total=0;
     for(let i=0;i<cart.length;i++){
         const urs=cart[i];
-        total=total + urs.salary;
+        total=(total + urs.salary);
     }
 
     return (
-        <div>
-            <h1>This is Salary Area </h1>
-            <h4>Salary summary :{cart.length}</h4>
-            <h1> Total Salary: {total} </h1>
+        <div className="cart">
+            <h1> Annual Salary Cart </h1>
+            <h3>Person summary :{cart.length}</h3>
+            <h1> Total Salary: <br/> $ {total} </h1>
         </div>
     );
 };
